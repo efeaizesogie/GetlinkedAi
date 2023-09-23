@@ -1,0 +1,293 @@
+/* header {
+    background: url(/src/assets/png/Purple-Lens-Flare-PNG.png), lightgray -204.25px 7px / 119.817% 104.852% no-repeat;
+    background-blend-mode: hard-light;
+} */
+
+section {
+  background-color: #150e28;
+  padding-right: 8.5%;
+  padding-left: 8.5%;
+  flex-shrink: 0;
+}
+
+header span,
+article h2 {
+  color: #d434fe;
+  font-family: "Clash Display";
+  font-style: normal;
+  line-height: normal;
+}
+
+.button-register button,
+form button {
+  width: 172px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  border: 0;
+  background: linear-gradient(
+    270deg,
+    #903aff 0%,
+    #d434fe 56.42%,
+    #ff26b9 99.99%,
+    #fe34b9 100%
+  );
+  cursor: pointer;
+}
+
+/*Style on CTA */
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 57px 0;
+}
+
+.back-icon {
+  display: none;
+}
+
+.question-form {
+  width: 617px;
+  padding: 6em 8em;
+  height: 611px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.question-form_assist {
+  color: #d434fe;
+  font-family: "Clash Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.question-form_assist h3 {
+  color: #d434fe;
+  font-family: "Clash Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.email-us {
+  display: none;
+}
+
+.response-input,
+.cta-button {
+  padding-top: 3rem;
+}
+
+.response-input input,
+textarea {
+  width: 100%;
+  outline: 0;
+  padding: 1.09em;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.cta-button {
+  text-align: center;
+}
+
+main article h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.contact-cta {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5em;
+}
+
+.contact-cta p {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contact-cta_media,
+.contact-cta {
+  padding-top: 1.8em;
+}
+
+.contact-cta_media p {
+  color: #d434fe;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+figure {
+  padding-top: 1em;
+  display: flex;
+  gap: 1.4em;
+}
+
+.response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.success {
+  background: #34fe34;
+  background: #fe34b9;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.mobile-cta-media {
+  display: none;
+}
+
+.spinner-border {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  section {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .button-register button,
+  form button {
+    width: 140px;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  main {
+    padding: 40px 0;
+  }
+
+  .question-form {
+    width: 80%;
+    padding: 4em 6em;
+  }
+}
+
+/* Media query for screens with a max-width of 768px (e.g., mobile devices) */
+@media screen and (max-width: 768px) {
+  app-mobile-nav {
+    display: none;
+  }
+
+  .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 442px;
+    left: -3px;
+    background-size: cover;
+    background: url(./../../assets/svg/Purple-Lens-Flare-PNG.svg);
+    background-blend-mode: hard-light;
+    background-repeat: no-repeat;
+  }
+
+  .email-us {
+    display: block;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 24px;
+  }
+
+  .back-icon {
+    display: block;
+    margin: 42px 0;
+  }
+
+  article {
+    display: none;
+  }
+
+  section {
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+
+  .question-form_assist h3 {
+    width: 80%;
+  }
+
+  .button-register button,
+  form button {
+    width: 120px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    z-index: 3;
+  }
+
+  .question-form {
+    width: 90%;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 1em 2em;
+  }
+
+  .mobile-cta-media {
+    display: block;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    height: 100px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

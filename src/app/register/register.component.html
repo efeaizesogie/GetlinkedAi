@@ -1,0 +1,199 @@
+<div class="register-section">
+  <app-mobile-nav></app-mobile-nav>
+  <section>
+    <!--mobile-nav section-->
+
+    <!--Call to action-->
+    <main class="main">
+      <div class="register-img">
+        <img src="./../../assets/png/register-img.png" alt="Register" />
+      </div>
+      <div class="register-form">
+        <div class="form-title">
+          <h3>Register</h3>
+          <div class="register-img mobile-img">
+            <img
+              src="./../../assets/png/register-img.png"
+              alt="Register"
+              class="mobile-img-img"
+            />
+          </div>
+          <div class="movement-cta">
+            <p>Be part of this movement!</p>
+            <div class="line">
+              <div class="humans">
+                <img src="./../../assets/svg/woman-walking.svg" alt="Woman" />
+                <img src="./../../assets/svg/man-walking.svg" alt="Man" />
+              </div>
+              <img
+                src="./../../assets/svg/Line 9.svg"
+                alt="line"
+                class="hr-line"
+              />
+            </div>
+          </div>
+
+          <h4>Create your own account</h4>
+        </div>
+        <form [formGroup]="registerForm" (submit)="onSubmit()">
+          <div class="form-row">
+            <div class="response-input">
+              <label for="team-name">Team’s Name</label>
+              <input
+                type="text"
+                name="team-name"
+                id="team-name"
+                placeholder="Enter the name of your group"
+                formControlName="team_name"
+              />
+            </div>
+            <div class="response-input">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                formControlName="pNumber"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="response-input">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email address"
+                formControlName="email"
+              />
+
+              <div
+                *ngIf="formSubmitted && registerForm.get('email')?.invalid"
+                class="text-danger"
+              >
+                <div
+                  *ngIf="registerForm.get('email')?.hasError('required')"
+                  class="error-msg"
+                >
+                  Email is required.
+                </div>
+
+                <div
+                  *ngIf="
+                    registerForm.get('email')?.hasError('customEmail') &&
+                    !registerForm.get('email')?.hasError('required')
+                  "
+                  class="error-msg"
+                >
+                  Please enter a valid custom email address.
+                </div>
+              </div>
+            </div>
+            <div class="response-input">
+              <label for="pTopic">Project Topic</label>
+              <input
+                type="text"
+                name="pTopic"
+                id="pTopic"
+                placeholder="What is your group project topic"
+                formControlName="pTopic"
+              />
+            </div>
+          </div>
+
+          <div class="form-row last-child">
+            <div class="response-input">
+              <label for="category">Category</label>
+              <select name="category" id="category" formControlName="category">
+                <option value="" disabled selected>Select a category</option>
+                <option
+                  value="category-1"
+                  *ngFor="let category of categories"
+                  [value]="category.id"
+                  class="select-option"
+                >
+                  {{ category.name }}
+                </option>
+              </select>
+            </div>
+            <div class="response-input">
+              <div *ngIf="!(registerForm.get('gSize')?.value === 'custom')">
+                <label for="group-size">Group Size</label>
+                <select
+                  name="group-size"
+                  id="group-size"
+                  formControlName="gSize"
+                >
+                  <option value="" disabled selected>Select</option>
+                  <option
+                    value=""
+                    *ngFor="let size of groupSizes"
+                    [value]="size.value"
+                  >
+                    {{ size.label }}
+                  </option>
+                </select>
+              </div>
+              <div *ngIf="registerForm.get('gSize')?.value === 'custom'">
+                <label for="custom-group-size">Group Size</label>
+                <input
+                  type="text"
+                  name="custom-group-size"
+                  id="custom-group-size"
+                  placeholder="Enter custom group size"
+                  formControlName="customGSize"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="review-details">
+            <p>Please review your registration details before submitting</p>
+          </div>
+          <div class="check-terms">
+            <label for="acceptTerms">
+              <input
+                type="checkbox"
+                id="acceptTerms"
+                name="accepTerms"
+                formArrayName="acceptTerms"
+                (change)="onAcceptTermsChange()"
+              />
+              Copy I agreed with the event terms and conditions and privacy
+              policy
+            </label>
+          </div>
+
+          <div class="cta-button">
+            <button type="submit" class="submit-btn" [disabled]="loading">
+              <span *ngIf="!loading">Register Now</span>
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-btn"
+                role="status"
+              ></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </section>
+
+  <div class="register-success" *ngIf="showPopUp">
+    <div class="pop-up">
+      <img
+        src="./../../assets/svg//congratulation.svg"
+        alt="Registration Successful"
+      />
+      <h4>
+        Congratulations <br />
+        you have successfully Registered!
+      </h4>
+      <p>Yes, it was easy and you did it! check your mail box for next step</p>
+      <div class="back-button">
+        <button type="button" class="back" (click)="closePopUp()">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

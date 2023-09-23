@@ -1,0 +1,11 @@
+.nav-logo {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.nav-logo span {
+  color: #d434fe;
+}
