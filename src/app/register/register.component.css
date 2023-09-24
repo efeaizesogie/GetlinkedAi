@@ -40,6 +40,12 @@
   margin-bottom: 46px;
 }
 
+.reg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .form-title h4 {
   color: #fff;
   font-family: "Montserrat";
@@ -226,6 +232,10 @@ select option {
   z-index: 3;
 }
 
+.desktop-success {
+  display: flex;
+}
+
 .pop-up {
   width: 50%;
   padding: 0 20px;
@@ -292,6 +302,19 @@ select option {
 .error-msg {
   color: #d434fe;
   margin-top: 10px;
+}
+
+.mobile-success {
+  display: none;
+}
+
+.pop-up p img {
+  width: 14px;
+  height: 14px;
+}
+
+.back-icon {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {
@@ -406,5 +429,41 @@ select option {
 
   .cta-button button {
     width: 50%;
+  }
+
+  .desktop-success {
+    display: none;
+  }
+
+  .mobile-success {
+    display: flex;
+  }
+
+  .pop-up {
+    width: 85%;
+    padding: 0 10px;
+  }
+
+  .pop-up h4 {
+    font-size: 16px;
+    padding: 0 45px;
+    margin-bottom: 29px;
+  }
+
+  .pop-up p {
+    padding: 0 10px;
+  }
+
+  .back-icon {
+    display: flex;
+    margin: 0;
+  }
+
+  .reg h3 {
+    margin-bottom: 0;
+  }
+
+  .reg {
+    margin-bottom: 24px;
   }
 }

@@ -10,7 +10,15 @@
       </div>
       <div class="register-form">
         <div class="form-title">
-          <h3>Register</h3>
+          <div class="reg">
+            <h3>Register</h3>
+            <img
+              src="./../../assets/svg/back icon.svg"
+              alt=""
+              class="back-icon"
+              routerLink=""
+            />
+          </div>
           <div class="register-img mobile-img">
             <img
               src="./../../assets/png/register-img.png"
@@ -180,17 +188,45 @@
     </main>
   </section>
 
-  <div class="register-success" *ngIf="showPopUp">
+  <div class="register-success desktop-success" *ngIf="showPopUp">
     <div class="pop-up">
       <img
-        src="./../../assets/svg//congratulation.svg"
+        src="./../../assets/svg/congratulation.svg"
         alt="Registration Successful"
       />
       <h4>
         Congratulations <br />
         you have successfully Registered!
       </h4>
-      <p>Yes, it was easy and you did it! check your mail box for next step</p>
+      <p>
+        Yes, it was easy and you did it! check your mail box for next step
+        <img
+          src="./../../assets/svg/1531010992wink-emoji-woman-png 1.svg"
+          alt=""
+        />
+      </p>
+      <div class="back-button">
+        <button type="button" class="back" (click)="closePopUp()">Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="register-success mobile-success" *ngIf="showPopUp">
+    <div class="pop-up">
+      <img
+        src="./../../assets/svg/success-mobile.svg"
+        alt="Registration Successful"
+      />
+      <h4>
+        Congratulations <br />
+        you have successfully Registered!
+      </h4>
+      <p>
+        Yes, it was easy and you did it! check your mail box for next step
+        <img
+          src="./../../assets/svg/1531010992wink-emoji-woman-png_2.svg"
+          alt=""
+        />
+      </p>
       <div class="back-button">
         <button type="button" class="back" (click)="closePopUp()">Back</button>
       </div>

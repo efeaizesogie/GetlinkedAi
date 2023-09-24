@@ -8,7 +8,12 @@
       <li routerLink="/contact-us">Contact</li>
       <app-button class="nav-bar-btn"></app-button>
     </ul>
-    <img class="nav-bar-menu" src="./../../assets/svg/Vector.svg" alt="" />
+    <img
+      class="nav-bar-menu"
+      src="./../../assets/svg/Vector.svg"
+      alt=""
+      (click)="openMobileMenu()"
+    />
   </div>
   <nav>
     <div class="nav-close">
@@ -89,6 +94,23 @@
     </div>
   </div>
 </header>
+
+<div class="mobile-menu" *ngIf="showMobileMenu">
+  <div class="menu-items">
+    <div class="close-icon" (click)="closeMobileMenu()">
+      <img src="./../../assets/svg/close-icon.svg" alt="" class="close-btn" />
+    </div>
+    <div class="nav-items">
+      <ul>
+        <li (click)="scrollToSection('timeline')">Timeline</li>
+        <li (click)="scrollToSection('introduction')">Overview</li>
+        <li (click)="scrollToSection('faqs')">FAQS</li>
+        <li routerLink="/contact-us">Contact</li>
+      </ul>
+      <app-button class="mobile-reg"></app-button>
+    </div>
+  </div>
+</div>
 
 <main>
   <section class="introduction main-content" id="introduction">
